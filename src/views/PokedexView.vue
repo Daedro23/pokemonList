@@ -140,7 +140,7 @@ onMounted(() => {
             <img 
               v-if="store.state.favorites.find(item => item.name === pokemonSelect.name)" 
               :src="starOn" 
-              alt=""
+              alt="Stars"
             />
           </div>
         </div>
