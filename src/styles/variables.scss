@@ -1,0 +1,27 @@
+// Colors
+$orange: #ECA539;
+$green: #b3ff00;
+$blue: #00b5ff;
+$pink: #ff00bd;
+$red: #F22539;
+$darkRed: #C00E20;
+$black: #353535;
+$darkGrey: #5E5E5E;
+$grey: #BFBFBF;
+$white: #F9F9F9;
+$light-grey:#E8E8E8;
+
+// Sizes
+$big: 36px;
+$title: 26px;
+$medium: 20px;
+$med: 18px;
+$small: 16px;
+$line-p: 27px; 
+
+// media queries
+@mixin mobile{
+    @media screen and (max-width: 520px) {
+        @content
+    }
+}
