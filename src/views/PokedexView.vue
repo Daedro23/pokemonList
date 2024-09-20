@@ -4,6 +4,8 @@ import { useStore } from 'vuex';
 import Button from '@/components/Button.vue';
 import starOn from '../components/icons/starOn.svg';
 import starOff from '../components/icons/starOff.svg';
+import all from '../components/icons/all.svg';
+import starWhite from '../components/icons/starWhite.svg';
 import { getPokemon, selectPokemon } from '@/services/pokemonService'; 
 
 const store = useStore();
@@ -111,8 +113,8 @@ onMounted(() => {
         </div>
       </li>
       <div class="footer">
-        <Button msg="All" @fn="toggleShowFavorites(false)"/>
-        <Button msg="Favorites" @fn="toggleShowFavorites(true)"/>
+        <Button :class="{ 'selected': !showFavorites, 'unselected': showFavorites }" msg="All" :icon="all" @fn="toggleShowFavorites(false)" />
+        <Button :class="{ 'selected': showFavorites, 'unselected': !showFavorites }" msg="Favorites" :icon="starWhite" @fn="toggleShowFavorites(true)" />
       </div>
     </div>
     
@@ -195,6 +197,14 @@ onMounted(() => {
   }
 }
 
+.selected {
+  background-color: $red;
+}
+
+.unselected {
+  background-color: $grey;
+}
+
 .searchField {
   height: 50px;
   width: 100%;
@@ -269,6 +279,12 @@ onMounted(() => {
       }
     }
   }
+}
+.star {
+  &:hover {
+        opacity: 0.7;
+        transition: 0.3s;
+        }
 }
 .background-img {
   position: relative;
@@ -360,6 +376,7 @@ onMounted(() => {
   font-size: $med;
   font-weight: 700;
   margin-top: 20px;
+  display: inline;
 }
 .footer {
   display: flex;

@@ -49,6 +49,7 @@ import Button from '@/components/Button.vue';
     .btn-primary {
         font-size: $med;
         margin-top: 50px;
+        display: inline;
     }
 </style>
 
